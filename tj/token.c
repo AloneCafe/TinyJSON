@@ -53,6 +53,9 @@ json_token * next() {
 
     tc += 1;
 
+    t.cl = cl;
+    t.cc = cc;
+
     while(1) {
         cc += 1;
         switch (state) {
@@ -332,6 +335,8 @@ json_token * matchNext(json_token_type type) {
 
 void rollback() {
     ctp -= 1;
+    cc = token_base[ctp].cc;
+    cl = token_base[ctp].cl;
     if (ctp < 0) {
         fwprintf(stderr, L"internal error, rollback operation at the first token.\n");
         terminate(1);

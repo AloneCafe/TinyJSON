@@ -38,7 +38,7 @@ void printNode(json_node *node) {
 
 void printNodeArray(int len, struct _json_node **node) {
     makeIndent();
-    wprintf(L"[\n");
+    wprintf(L"[");
     indents += 1;
 
     int i;

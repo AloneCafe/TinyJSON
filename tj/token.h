@@ -29,7 +29,8 @@ typedef enum _json_token_type{
 
 typedef struct _json_token {
     json_token_type type;
-    size_t char_pos;    /* reserve field */
+    int cc;
+    int cl;
     union {
         long double num;
         wchar_t *string;
